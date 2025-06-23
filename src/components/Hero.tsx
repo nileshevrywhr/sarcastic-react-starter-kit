@@ -12,7 +12,7 @@ const Hero = () => {
       
       <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1] text-center max-w-4xl">
         Welcome to the most{" "}
-        <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           enthusiastic
         </span>{" "}
         React boilerplate you'll ever ignore

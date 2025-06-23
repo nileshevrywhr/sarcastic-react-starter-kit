@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Menu } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
@@ -38,7 +39,8 @@ const Header = () => {
           <span className="sr-only">Toggle Menu</span>
         </button>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+          <div className="w-full flex-1 md:w-auto md:flex-none flex items-center gap-2">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" className="w-9 px-0">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
