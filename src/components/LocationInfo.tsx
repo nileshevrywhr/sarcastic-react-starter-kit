@@ -1,21 +1,22 @@
 
-import { MapPin, Globe, Server, Clock, Calendar } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin } from "lucide-react";
 
 const LocationInfo = () => {
   const locationData = {
     city: "Mumbai",
     country: "IN",
     country_name: "India",
-    ip: "13.233.XXX.XXX",
-    port: "11434",
-    protocol: "http",
+    ip: "13.233.86.114",
+    port: "22181",
+    protocol: "https",
     region: "Maharashtra",
     ollama_version: "0.9.0",
     first_found: "27/5/2025, 5:22:54 pm",
     age: "3 weeks",
     latitude: "19.075975",
     longitude: "72.877380",
+    organization: "Infocon Holding - EasyIO-30P Sedona",
+    asn: "16509"
   };
 
   return (
@@ -32,98 +33,65 @@ const LocationInfo = () => {
           </div>
         </div>
 
-        {/* Location Information */}
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Location Information</h2>
+        {/* Minimal Server Information */}
+        <div className="bg-slate-900 text-white p-6 rounded-lg font-mono">
+          {/* Header with URL and status */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-cyan-400 text-lg">
+              {locationData.protocol}://{locationData.ip}:{locationData.port}
+            </span>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-green-500 text-sm">99%</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <MapPin className="h-5 w-5" />
-                  Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">City:</span>
-                  <span>{locationData.city}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Region:</span>
-                  <span>{locationData.region}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Country:</span>
-                  <span>{locationData.country_name} ({locationData.country})</span>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Organization info */}
+          <div className="mb-4">
+            <div className="text-orange-400 text-sm mb-1">aws</div>
+            <div className="text-white mb-2">{locationData.organization}</div>
+            <div className="text-cyan-400">{locationData.ip}</div>
+          </div>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Globe className="h-5 w-5" />
-                  Network
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">IP:</span>
-                  <span className="font-mono">{locationData.ip}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Port:</span>
-                  <span className="font-mono">{locationData.port}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Protocol:</span>
-                  <span className="uppercase">{locationData.protocol}</span>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Location */}
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-yellow-400">🇮🇳</span>
+            <span className="text-white">
+              {locationData.country_name} / {locationData.region} / {locationData.city}
+            </span>
+          </div>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Server className="h-5 w-5" />
-                  Service
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Ollama Version:</span>
-                  <span>{locationData.ollama_version}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Coordinates:</span>
-                  <span className="font-mono text-xs">
-                    {locationData.latitude}, {locationData.longitude}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
+          {/* ASN */}
+          <div className="mb-3">
+            <span className="text-gray-400">ASN: </span>
+            <span className="text-cyan-400">{locationData.asn}</span>
+          </div>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Clock className="h-5 w-5" />
-                  Timeline
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">First Found:</span>
-                  <span className="text-sm">{locationData.first_found}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Age:</span>
-                  <span>{locationData.age}</span>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Organization code */}
+          <div className="mb-3">
+            <span className="text-gray-400">Organization: </span>
+            <span className="text-cyan-400">AMAZON-02</span>
+          </div>
+
+          {/* Date */}
+          <div className="mb-4">
+            <span className="text-white">2025-06-24</span>
+          </div>
+
+          {/* Service indicator */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <span className="text-green-400">ollama</span>
+          </div>
+
+          {/* Additional fields for reference */}
+          <div className="border-t border-gray-700 pt-4 text-xs space-y-1 text-gray-400">
+            <div>Country: {locationData.country}</div>
+            <div>Protocol: {locationData.protocol}</div>
+            <div>Ollama Version: {locationData.ollama_version}</div>
+            <div>First Found: {locationData.first_found}</div>
+            <div>Age: {locationData.age}</div>
+            <div>Coordinates: {locationData.latitude}, {locationData.longitude}</div>
           </div>
         </div>
       </div>
