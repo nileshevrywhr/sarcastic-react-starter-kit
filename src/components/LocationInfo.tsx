@@ -2,21 +2,37 @@
 import { MapPin } from "lucide-react";
 
 const LocationInfo = () => {
-  const locationData = {
-    city: "Mumbai",
-    country: "IN",
-    country_name: "India",
-    ip: "13.233.86.114",
-    port: "22181",
-    protocol: "https",
-    region: "Maharashtra",
-    ollama_version: "0.9.0",
-    first_found: "27/5/2025, 5:22:54 pm",
-    age: "3 weeks",
-    latitude: "19.075975",
-    longitude: "72.877380",
-    organization: "Infocon Holding - EasyIO-30P Sedona",
-    asn: "16509"
+  const serverData = {
+    ip: "117.72.XXX.XX",
+    port: 11434,
+    version: "0.5.10",
+    city: "Beijing",
+    country: "CN",
+    country_name: "China",
+    region: "Beijing",
+    latitude: "39.907501",
+    longitude: "116.397102",
+    protocol: "http",
+    local: [
+      {
+        name: "deepseek-r1:1.5b",
+        model: "deepseek-r1:1.5b",
+        size: 1117322599
+      },
+      {
+        name: "nomic-embed-text:latest",
+        model: "nomic-embed-text:latest",
+        size: 274302450
+      }
+    ],
+    running: [],
+    first_seen_online: "2025-06-23T20:57:12.507543",
+    age: "10 hours"
+  };
+
+  const formatSize = (bytes: number) => {
+    const gb = bytes / (1024 * 1024 * 1024);
+    return `${gb.toFixed(1)}GB`;
   };
 
   return (
@@ -28,70 +44,73 @@ const LocationInfo = () => {
             <MapPin className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
             <p className="text-muted-foreground">Map will be integrated here</p>
             <p className="text-sm text-muted-foreground mt-2">
-              {locationData.latitude}, {locationData.longitude}
+              {serverData.latitude}, {serverData.longitude}
             </p>
           </div>
         </div>
 
-        {/* Minimal Server Information */}
-        <div className="bg-slate-900 text-white p-6 rounded-lg font-mono">
-          {/* Header with URL and status */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-cyan-400 text-lg">
-              {locationData.protocol}://{locationData.ip}:{locationData.port}
-            </span>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-green-500 text-sm">99%</span>
+        {/* Server Information */}
+        <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm">
+          {/* Header with IP:Port and status */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-cyan-400 text-lg font-medium">
+                {serverData.ip}:{serverData.port}
+              </span>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-green-500 text-xs">ONLINE</span>
+              </div>
             </div>
           </div>
 
-          {/* Organization info */}
-          <div className="mb-4">
-            <div className="text-orange-400 text-sm mb-1">aws</div>
-            <div className="text-white mb-2">{locationData.organization}</div>
-            <div className="text-cyan-400">{locationData.ip}</div>
-          </div>
-
           {/* Location */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-yellow-400">🇮🇳</span>
-            <span className="text-white">
-              {locationData.country_name} / {locationData.region} / {locationData.city}
-            </span>
-          </div>
-
-          {/* ASN */}
-          <div className="mb-3">
-            <span className="text-gray-400">ASN: </span>
-            <span className="text-cyan-400">{locationData.asn}</span>
-          </div>
-
-          {/* Organization code */}
-          <div className="mb-3">
-            <span className="text-gray-400">Organization: </span>
-            <span className="text-cyan-400">AMAZON-02</span>
-          </div>
-
-          {/* Date */}
           <div className="mb-4">
-            <span className="text-white">2025-06-24</span>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-blue-400">🇨🇳</span>
+              <span className="text-white">
+                {serverData.country_name} / {serverData.region} / {serverData.city}
+              </span>
+            </div>
           </div>
 
-          {/* Service indicator */}
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-green-400">ollama</span>
+          {/* Protocol and Version */}
+          <div className="space-y-1 mb-4">
+            <div>
+              <span className="text-gray-400">Protocol: </span>
+              <span className="text-cyan-400">{serverData.protocol}</span>
+            </div>
+            <div>
+              <span className="text-gray-400">Version: </span>
+              <span className="text-cyan-400">{serverData.version}</span>
+            </div>
           </div>
 
-          {/* Additional fields for reference */}
-          <div className="border-t border-gray-700 pt-4 text-xs space-y-1 text-gray-400">
-            <div>Country: {locationData.country}</div>
-            <div>Protocol: {locationData.protocol}</div>
-            <div>Ollama Version: {locationData.ollama_version}</div>
-            <div>First Found: {locationData.first_found}</div>
-            <div>Age: {locationData.age}</div>
-            <div>Coordinates: {locationData.latitude}, {locationData.longitude}</div>
+          {/* Models */}
+          <div className="mb-4">
+            <div className="text-yellow-400 mb-2">Local Models ({serverData.local.length})</div>
+            {serverData.local.map((model, index) => (
+              <div key={index} className="ml-2 mb-1 text-xs">
+                <div className="text-white">{model.name}</div>
+                <div className="text-gray-400">{formatSize(model.size)}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Running Models */}
+          <div className="mb-4">
+            <div className="text-yellow-400 mb-2">Running ({serverData.running.length})</div>
+            {serverData.running.length === 0 && (
+              <div className="ml-2 text-gray-400 text-xs">No models currently running</div>
+            )}
+          </div>
+
+          {/* Timestamps */}
+          <div className="border-t border-gray-700 pt-4 space-y-1 text-xs text-gray-400">
+            <div>First seen: {new Date(serverData.first_seen_online).toLocaleString()}</div>
+            <div>Age: {serverData.age}</div>
+            <div>Coordinates: {serverData.latitude}, {serverData.longitude}</div>
+            <div>Country code: {serverData.country}</div>
           </div>
         </div>
       </div>
