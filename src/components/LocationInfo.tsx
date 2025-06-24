@@ -1,4 +1,5 @@
-import { MapPin } from "lucide-react";
+
+import { MapPin, Clock } from "lucide-react";
 import Map from "./Map";
 
 const LocationInfo = () => {
@@ -40,6 +41,29 @@ const LocationInfo = () => {
       return `${mb.toFixed(0)}MB`;
     }
   };
+
+  const formatTimestamp = (dateString: string) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    
+    const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const time = date.toLocaleTimeString('en-US', { 
+      hour12: false, 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+    
+    return {
+      formatted: `${month} ${day}, ${year} | ${time} UTC`,
+      hoursAgo: diffHours
+    };
+  };
+
+  const timestamp = formatTimestamp(serverData.first_seen_online);
 
   return (
     <section className="container py-24">
@@ -109,11 +133,18 @@ const LocationInfo = () => {
           </div>
 
           {/* Timestamps */}
-          <div className="border-t border-gray-700 pt-4 space-y-1 text-xs text-gray-400">
-            <div>First seen: {new Date(serverData.first_seen_online).toLocaleString()}</div>
-            <div>Age: {serverData.age}</div>
-            <div>Coordinates: {serverData.latitude}, {serverData.longitude}</div>
-            <div>Country code: {serverData.country}</div>
+          <div className="border-t border-gray-700 pt-4 space-y-3 text-xs">
+            {/* Redesigned timestamp */}
+            <div className="flex items-center gap-2 text-gray-400">
+              <Clock className="w-3 h-3" />
+              <span>AS OF</span>
+              <span className="text-white font-medium">{timestamp.formatted}</span>
+            </div>
+            <div className="text-gray-400">
+              <div>Age: {serverData.age}</div>
+              <div>Coordinates: {serverData.latitude}, {serverData.longitude}</div>
+              <div>Country code: {serverData.country}</div>
+            </div>
           </div>
         </div>
       </div>
