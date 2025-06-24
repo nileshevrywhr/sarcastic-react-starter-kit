@@ -1,5 +1,5 @@
-
 import { MapPin } from "lucide-react";
+import Map from "./Map";
 
 const LocationInfo = () => {
   const serverData = {
@@ -44,16 +44,13 @@ const LocationInfo = () => {
   return (
     <section className="container py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {/* Map Placeholder */}
-        <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-            <p className="text-muted-foreground">Map will be integrated here</p>
-            <p className="text-sm text-muted-foreground mt-2">
-              {serverData.latitude}, {serverData.longitude}
-            </p>
-          </div>
-        </div>
+        {/* Map with API Integration */}
+        <Map 
+          latitude={serverData.latitude}
+          longitude={serverData.longitude}
+          city={serverData.city}
+          country={serverData.country_name}
+        />
 
         {/* Server Information */}
         <div className="bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-white p-6 rounded-lg font-mono text-sm h-96 overflow-y-auto">
