@@ -31,8 +31,14 @@ const LocationInfo = () => {
   };
 
   const formatSize = (bytes: number) => {
+    const mb = bytes / (1024 * 1024);
     const gb = bytes / (1024 * 1024 * 1024);
-    return `${gb.toFixed(1)}GB`;
+    
+    if (gb >= 1) {
+      return `${gb.toFixed(1)}GB`;
+    } else {
+      return `${mb.toFixed(0)}MB`;
+    }
   };
 
   return (
@@ -50,7 +56,7 @@ const LocationInfo = () => {
         </div>
 
         {/* Server Information */}
-        <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm">
+        <div className="bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-white p-6 rounded-lg font-mono text-sm h-96 overflow-y-auto">
           {/* Header with IP:Port and status */}
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-2">
