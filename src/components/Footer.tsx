@@ -1,6 +1,6 @@
 
 import { Separator } from "@/components/ui/separator";
-import { Github, Twitter, Coffee } from "lucide-react";
+import { Github, Twitter, Shield } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,36 +8,37 @@ const Footer = () => {
       <div className="container py-8 md:py-12">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Sarcastic Starter Kit</h3>
+            <h3 className="text-lg font-semibold">Ollama Security Alert</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Making development slightly more bearable, one sarcastic comment at a time.
+              Making the internet slightly more secure, one sarcastic wake-up call at a time. 
+              You're welcome.
             </p>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Resources</h4>
+            <h4 className="text-sm font-semibold">Security Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Examples</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">GitHub Issues</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Ollama Security Guide</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Server Hardening Tips</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Vulnerability Reports</a></li>
             </ul>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Community</h4>
+            <h4 className="text-sm font-semibold">Tools & Scanners</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Discord</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Stack Overflow</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Server Scanner</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Security Checker</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Monitoring Tools</a></li>
             </ul>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Support</h4>
+            <h4 className="text-sm font-semibold">Get Help</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Buy us coffee</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Therapy sessions</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Career counseling</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Security Audit</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Emergency Response</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">Professional Support</a></li>
             </ul>
           </div>
         </div>
@@ -46,7 +47,7 @@ const Footer = () => {
         
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Sarcastic Starter Kit. All rights reserved (as if anyone would steal this).
+            © 2024 Ollama Security Alert. Saving servers from themselves since developers stopped caring about security.
           </p>
           
           <div className="flex items-center space-x-4">
@@ -57,7 +58,7 @@ const Footer = () => {
               <Twitter className="h-5 w-5" />
             </a>
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Coffee className="h-5 w-5" />
+              <Shield className="h-5 w-5" />
             </a>
           </div>
         </div>

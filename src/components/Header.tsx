@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { Github, Menu } from "lucide-react";
+import { Github, Menu, Shield } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
@@ -8,8 +9,9 @@ const Header = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
+            <Shield className="h-5 w-5 text-destructive" />
             <span className="hidden font-bold sm:inline-block">
-              Sarcastic Starter Kit
+              Ollama Security Alert
             </span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -17,19 +19,19 @@ const Header = () => {
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#features"
             >
-              Features
+              Vulnerabilities
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#docs"
+              href="#scanner"
             >
-              Docs
+              Scanner
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#about"
+              href="#solutions"
             >
-              About
+              Solutions
             </a>
           </nav>
         </div>
