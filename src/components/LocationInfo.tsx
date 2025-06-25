@@ -77,11 +77,21 @@ const LocationInfo = () => {
         />
 
         {/* Server Information */}
-        <div className="bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-white p-6 rounded-lg font-mono text-sm h-96 overflow-y-auto">
+        <div className="bg-background/80 dark:bg-slate-900/80 backdrop-blur-sm border border-border text-foreground p-6 rounded-lg font-mono text-sm">
+          {/* Timestamp moved to top with age in parentheses */}
+          <div className="mb-4 pb-3 border-b border-border">
+            <div className="flex items-center gap-2 text-muted-foreground text-xs">
+              <Clock className="w-3 h-3" />
+              <span>AS OF</span>
+              <span className="text-foreground font-medium">{timestamp.formatted}</span>
+              <span className="text-muted-foreground">({serverData.age})</span>
+            </div>
+          </div>
+
           {/* Header with IP:Port and status */}
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-cyan-400 text-lg font-medium">
+              <span className="text-primary text-lg font-medium">
                 {serverData.ip}:{serverData.port}
               </span>
               <div className="flex items-center gap-2">
@@ -95,8 +105,8 @@ const LocationInfo = () => {
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-1">
               <span className="text-blue-400">🇨🇳</span>
-              <span className="text-white">
-                {serverData.country_name} / {serverData.region} / {serverData.city}
+              <span className="text-foreground">
+                {serverData.country} / {serverData.country_name} / {serverData.region} / {serverData.city}
               </span>
             </div>
           </div>
@@ -104,47 +114,34 @@ const LocationInfo = () => {
           {/* Protocol and Version */}
           <div className="space-y-1 mb-4">
             <div>
-              <span className="text-gray-400">Protocol: </span>
-              <span className="text-cyan-400">{serverData.protocol}</span>
+              <span className="text-muted-foreground">Protocol: </span>
+              <span className="text-primary">{serverData.protocol}</span>
             </div>
             <div>
-              <span className="text-gray-400">Version: </span>
-              <span className="text-cyan-400">{serverData.version}</span>
+              <span className="text-muted-foreground">Version: </span>
+              <span className="text-primary">{serverData.version}</span>
             </div>
           </div>
 
-          {/* Models */}
+          {/* Models - all in one line */}
           <div className="mb-4">
-            <div className="text-yellow-400 mb-2">Local Models ({serverData.local.length})</div>
-            {serverData.local.map((model, index) => (
-              <div key={index} className="ml-2 mb-1 text-xs">
-                <div className="text-white">{model.name}</div>
-                <div className="text-gray-400">{formatSize(model.size)}</div>
-              </div>
-            ))}
+            <div className="text-accent mb-2">Local Models ({serverData.local.length})</div>
+            <div className="text-xs text-muted-foreground">
+              {serverData.local.map((model, index) => (
+                <span key={index}>
+                  {model.name} ({formatSize(model.size)})
+                  {index < serverData.local.length - 1 && ", "}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Running Models */}
-          <div className="mb-4">
-            <div className="text-yellow-400 mb-2">Running ({serverData.running.length})</div>
+          <div>
+            <div className="text-accent mb-2">Running ({serverData.running.length})</div>
             {serverData.running.length === 0 && (
-              <div className="ml-2 text-gray-400 text-xs">No models currently running</div>
+              <div className="text-muted-foreground text-xs">No models currently running</div>
             )}
-          </div>
-
-          {/* Timestamps */}
-          <div className="border-t border-gray-700 pt-4 space-y-3 text-xs">
-            {/* Redesigned timestamp */}
-            <div className="flex items-center gap-2 text-gray-400">
-              <Clock className="w-3 h-3" />
-              <span>AS OF</span>
-              <span className="text-white font-medium">{timestamp.formatted}</span>
-            </div>
-            <div className="text-gray-400">
-              <div>Age: {serverData.age}</div>
-              <div>Coordinates: {serverData.latitude}, {serverData.longitude}</div>
-              <div>Country code: {serverData.country}</div>
-            </div>
           </div>
         </div>
       </div>
