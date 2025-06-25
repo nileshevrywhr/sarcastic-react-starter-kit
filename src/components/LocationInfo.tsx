@@ -1,12 +1,11 @@
-
 import { MapPin, Clock } from "lucide-react";
 import Map from "./Map";
 
 const LocationInfo = () => {
   const serverData = {
-    ip: "117.72.XXX.XX",
+    ip: "116.130.XXX.XXX",
     port: 11434,
-    version: "0.5.10",
+    version: "0.6.8",
     city: "Beijing",
     country: "CN",
     country_name: "China",
@@ -16,19 +15,40 @@ const LocationInfo = () => {
     protocol: "http",
     local: [
       {
-        name: "deepseek-r1:1.5b",
-        model: "deepseek-r1:1.5b",
-        size: 1117322599
+        name: "deepseek-r1:32b",
+        model: "deepseek-r1:32b",
+        size: 19851337809
       },
       {
-        name: "nomic-embed-text:latest",
-        model: "nomic-embed-text:latest",
-        size: 274302450
+        name: "bge-m3:latest",
+        model: "bge-m3:latest",
+        size: 1157672605
+      },
+      {
+        name: "qwen3:32b",
+        model: "qwen3:32b",
+        size: 20201253588
       }
     ],
-    running: [],
-    first_seen_online: "2025-06-23T20:57:12.507543",
-    age: "10 hours"
+    running: [
+      {
+        name: "deepseek-r1:32b",
+        model: "deepseek-r1:32b",
+        size: 23088674816
+      },
+      {
+        name: "qwen3:32b",
+        model: "qwen3:32b",
+        size: 25596877482
+      },
+      {
+        name: "bge-m3:latest",
+        model: "bge-m3:latest",
+        size: 1715003392
+      }
+    ],
+    first_seen_online: "2025-06-23T20:57:34.827728",
+    age: "22 hours"
   };
 
   const formatSize = (bytes: number) => {
@@ -139,9 +159,14 @@ const LocationInfo = () => {
           {/* Running Models */}
           <div>
             <div className="text-accent mb-2">Running ({serverData.running.length})</div>
-            {serverData.running.length === 0 && (
-              <div className="text-muted-foreground text-xs">No models currently running</div>
-            )}
+            <div className="text-xs text-muted-foreground">
+              {serverData.running.map((model, index) => (
+                <span key={index}>
+                  {model.name} ({formatSize(model.size)})
+                  {index < serverData.running.length - 1 && ", "}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
