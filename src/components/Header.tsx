@@ -9,9 +9,9 @@ const Header = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
-            <Shield className="h-5 w-5 text-destructive" />
+            <Shield className="h-5 w-5 text-orange-500" />
             <span className="hidden font-bold sm:inline-block">
-              Ollama Security Alert
+              Digital Suraksha Initiative
             </span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -19,19 +19,19 @@ const Header = () => {
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#features"
             >
-              Vulnerabilities
+              Security Roadmap
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#scanner"
             >
-              Scanner
+              Assessment Tools
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#solutions"
             >
-              Solutions
+              Nation Building
             </a>
           </nav>
         </div>

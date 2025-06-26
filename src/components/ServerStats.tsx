@@ -6,25 +6,25 @@ const ServerStats = () => {
   const stats = [
     {
       value: 259237,
-      label: "Total Servers",
+      label: "Total Servers Discovered",
       color: "text-blue-400",
       bgColor: "bg-blue-500/10 border-blue-500/20"
     },
     {
       value: 1937,
-      label: "Valid Servers",
+      label: "Secured Servers",
       color: "text-green-400", 
       bgColor: "bg-green-500/10 border-green-500/20"
     },
     {
       value: 126,
-      label: "New Today",
+      label: "New Discoveries Today",
       color: "text-orange-400",
       bgColor: "bg-orange-500/10 border-orange-500/20"
     },
     {
       value: 4,
-      label: "Latest Find",
+      label: "Latest Discovery",
       color: "text-pink-400",
       bgColor: "bg-pink-500/10 border-pink-500/20",
       suffix: " minutes ago"
@@ -33,6 +33,11 @@ const ServerStats = () => {
 
   return (
     <section className="container py-16 -mt-8">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold mb-2">Our Digital Infrastructure Census</h2>
+        <p className="text-muted-foreground">Real-time data on our collective journey toward server security</p>
+      </div>
+      
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {stats.map((stat, index) => (
           <div
@@ -59,7 +64,7 @@ const ServerStats = () => {
       
       <div className="text-center mt-6">
         <p className="text-xs text-muted-foreground italic">
-          * Valid Servers: Verified at the speed of a government website (AKA: Slow)
+          * Progress takes time, but every step forward strengthens our digital foundation
         </p>
       </div>
     </section>
