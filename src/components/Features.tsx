@@ -7,39 +7,39 @@ const Features = () => {
   const features = [
     {
       icon: <AlertTriangle className="h-6 w-6" />,
-      title: "Completely Exposed",
-      description: "Your Ollama server is probably accessible to everyone right now. Congratulations, you've created a public AI service!",
-      badge: "Concerning"
+      title: "Straight Exposed",
+      description: "Your server's naked, walking around like it don't matter / Hackers see it, they be laughing, your security's shattered / No protection, no direction, just pure neglection / Time for some introspection before they make their connection",
+      badge: "Fire"
     },
     {
       icon: <Eye className="h-6 w-6" />,
-      title: "Visible to All",
-      description: "Anyone can see your models, query them, and potentially abuse your resources. It's like leaving your front door open with a sign saying 'Free Stuff Inside'.",
-      badge: "Obvious"
+      title: "All Eyes on Me",
+      description: "Everybody's watching, everybody's lurking / Your models working overtime while your security's not working / They see everything you got, every bit and every byte / Your AI's spitting bars for free all day and all night",
+      badge: "Tracked"
     },
     {
       icon: <Globe className="h-6 w-6" />,
-      title: "Internet Famous",
-      description: "Your server is discoverable by anyone scanning the internet. You're basically a celebrity now, just not the good kind.",
-      badge: "Unfortunate"
+      title: "Worldwide Phenomenon",
+      description: "From Detroit to Beijing, they know your server's name / Your Ollama's more famous than my hall of fame / Scanners worldwide got you pinned on their map / Time to shut it down before you fall into their trap",
+      badge: "Global"
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: "Zero Authentication",
-      description: "No passwords, no API keys, no nothing. It's refreshingly insecure in a world obsessed with security theater.",
-      badge: "Liberating"
+      title: "Zero Defense",
+      description: "No passwords, no walls, no nothing at all / Standing there defenseless, just waiting to fall / Like fighting Tyson with both hands tied behind your back / Better gear up quick before they launch their attack",
+      badge: "Weak"
     },
     {
       icon: <Lock className="h-6 w-6" />,
-      title: "Easy to Abuse",
-      description: "Malicious actors can use your models for harmful content generation. But hey, at least you're contributing to the chaos!",
-      badge: "Generous"
+      title: "Criminal Intent",
+      description: "They're using your models for schemes so wicked / Your innocent AI just got twisted and tricked / Generating chaos while you're sleeping so sound / Wake up and secure it before they burn it all down",
+      badge: "Dangerous"
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "24/7 Availability",
-      description: "Your server works harder than you do, serving requests around the clock. Too bad you're not getting paid for it.",
-      badge: "Dedicated"
+      title: "24/7 Grind",
+      description: "Your server's working harder than a single mom of three / Serving requests for hackers completely for free / No breaks, no pay, just pure exploitation / Time to end this digital plantation",
+      badge: "Exhausted"
     }
   ];
 
@@ -47,11 +47,12 @@ const Features = () => {
     <section id="features" className="container py-24 space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Why Your Ollama Server is a Security Nightmare*
+          8 Mile Security Cipher: Why Your Server's Getting Bodied*
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          *Don't worry, you're not alone. Thousands of developers are making the same mistake 
-          right now. Yes, even the one sitting next to you who claims to be a "security expert."
+          *Listen up, Rabbit. Your server's in the wrong neighborhood without protection.
+          These digital thugs are about to make your AI spit more bars than you ever intended.
+          Time to step up your security game before they end your whole career.
         </p>
       </div>
       
@@ -77,24 +78,24 @@ const Features = () => {
       </div>
       
       <div className="mt-12 p-6 bg-destructive/5 border border-destructive/20 rounded-lg">
-        <h3 className="text-xl font-semibold mb-4 text-destructive">How to Actually Secure Your Server</h3>
+        <h3 className="text-xl font-semibold mb-4 text-destructive">Marshall's Security Manual (Don't Sleep on This)</h3>
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <h4 className="font-medium mb-2">Quick Fixes (Do These Now):</h4>
+            <h4 className="font-medium mb-2">Quick Fixes (Before You Lose Yourself):</h4>
             <ul className="text-sm space-y-1 text-muted-foreground">
-              <li>• Bind to localhost only (127.0.0.1:11434)</li>
-              <li>• Use a reverse proxy with authentication</li>
-              <li>• Set up firewall rules</li>
-              <li>• Monitor access logs regularly</li>
+              <li>• Lock it down to localhost (127.0.0.1:11434)</li>
+              <li>• Set up a reverse proxy with authentication</li>
+              <li>• Build those firewall walls up high</li>
+              <li>• Monitor those logs like your life depends on it</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-medium mb-2">Proper Solutions:</h4>
+            <h4 className="font-medium mb-2">Real Solutions (The Way I Am):</h4>
             <ul className="text-sm space-y-1 text-muted-foreground">
-              <li>• Implement API key authentication</li>
-              <li>• Use VPN for remote access</li>
-              <li>• Set up rate limiting</li>
-              <li>• Regular security audits</li>
+              <li>• API keys stronger than my lyrics</li>
+              <li>• VPN tunnel deeper than my rhymes</li>
+              <li>• Rate limiting tighter than my flow</li>
+              <li>• Security audits more thorough than my bars</li>
             </ul>
           </div>
         </div>

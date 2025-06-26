@@ -12,19 +12,19 @@ const ServerStats = () => {
     },
     {
       value: 1937,
-      label: "Valid Servers",
+      label: "Exposed Like Me",
       color: "text-green-400", 
       bgColor: "bg-green-500/10 border-green-500/20"
     },
     {
       value: 126,
-      label: "New Today",
+      label: "New Casualties",
       color: "text-orange-400",
       bgColor: "bg-orange-500/10 border-orange-500/20"
     },
     {
       value: 4,
-      label: "Latest Find",
+      label: "Fresh Victim",
       color: "text-pink-400",
       bgColor: "bg-pink-500/10 border-pink-500/20",
       suffix: " minutes ago"
@@ -59,7 +59,7 @@ const ServerStats = () => {
       
       <div className="text-center mt-6">
         <p className="text-xs text-muted-foreground italic">
-          * Valid Servers: Verified at the speed of a government website (AKA: Slow)
+          * "Now I get around in a crowd of real motherfuckers" - Your unprotected servers to hackers worldwide
         </p>
       </div>
     </section>

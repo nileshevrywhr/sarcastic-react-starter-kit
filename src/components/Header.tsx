@@ -11,7 +11,7 @@ const Header = () => {
           <a className="mr-6 flex items-center space-x-2" href="/">
             <Shield className="h-5 w-5 text-destructive" />
             <span className="hidden font-bold sm:inline-block">
-              Ollama Security Alert
+              Slim Shady Security Alert
             </span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -19,19 +19,19 @@ const Header = () => {
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#features"
             >
-              Vulnerabilities
+              Battle Scars
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#scanner"
             >
-              Scanner
+              Stan Scanner
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#solutions"
             >
-              Solutions
+              Recovery
             </a>
           </nav>
         </div>
