@@ -1,17 +1,16 @@
 
 import { Button } from "@/components/ui/button";
-import { Github, Menu, Shield } from "lucide-react";
+import { Github, Menu } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
-            <Shield className="h-5 w-5 text-orange-500" />
             <span className="hidden font-bold sm:inline-block">
-              Digital Suraksha Initiative
+              Sarcastic Starter Kit
             </span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -19,19 +18,19 @@ const Header = () => {
               className="transition-colors hover:text-foreground/80 text-foreground/60"
               href="#features"
             >
-              Security Roadmap
+              Features
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#scanner"
+              href="#docs"
             >
-              Assessment Tools
+              Docs
             </a>
             <a
               className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#solutions"
+              href="#about"
             >
-              Nation Building
+              About
             </a>
           </nav>
         </div>
